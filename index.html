@@ -3,167 +3,168 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eBay / Amazon Selling Calculator</title>
+  <title>Marketplace Selling Calculator</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="wrap">
+  <div class="page">
     <header class="hero">
-      <h1>Marketplace Selling Calculator</h1>
-      <p>
-        Built for real seller math: selling price, buyer shipping, item cost, shipping cost,
-        promoted ads, seller level, international fee, and eBay category fee logic.
-      </p>
+      <div class="hero-inner">
+        <h1>Marketplace Selling Calculator</h1>
+        <p>
+          Real seller math for eBay and Amazon. Store subscription, category,
+          subcategory, seller level, ads, tax, international fee, and target margins.
+        </p>
+      </div>
     </header>
 
-    <main class="card">
-      <section class="inputs">
-        <div class="field">
-          <label for="marketplace">Marketplace</label>
-          <select id="marketplace">
-            <option value="ebay" selected>eBay</option>
-            <option value="amazon">Amazon</option>
-          </select>
+    <main class="app">
+      <section class="panel panel-form">
+        <div class="panel-header">
+          <h2>Inputs</h2>
+          <button id="calcBtn" type="button" class="primary-btn">Calculate</button>
         </div>
 
-        <div class="field">
-          <label for="sellPrice">Sold Price ($)</label>
-          <input id="sellPrice" type="number" min="0" step="0.01" value="771.99" />
-        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="marketplace">Marketplace</label>
+            <select id="marketplace">
+              <option value="ebay" selected>eBay</option>
+              <option value="amazon">Amazon</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="buyerShip">Shipping Charged to Buyer ($)</label>
-          <input id="buyerShip" type="number" min="0" step="0.01" value="0.00" />
-        </div>
+          <div class="field">
+            <label for="sellPrice">Sold Price ($)</label>
+            <input id="sellPrice" type="number" min="0" step="0.01" value="206.00" />
+          </div>
 
-        <div class="field">
-          <label for="itemCost">Item Cost ($)</label>
-          <input id="itemCost" type="number" min="0" step="0.01" value="304.24" />
-        </div>
+          <div class="field">
+            <label for="buyerShip">Shipping Charged to Buyer ($)</label>
+            <input id="buyerShip" type="number" min="0" step="0.01" value="0.00" />
+          </div>
 
-        <div class="field">
-          <label for="shipCost">Your Shipping Cost ($)</label>
-          <input id="shipCost" type="number" min="0" step="0.01" value="20.00" />
-        </div>
+          <div class="field">
+            <label for="itemCost">Item Cost ($)</label>
+            <input id="itemCost" type="number" min="0" step="0.01" value="112.81" />
+          </div>
 
-        <div class="field">
-          <label for="storeLevel">eBay Store Subscription</label>
-          <select id="storeLevel">
-            <option value="none" selected>No Store</option>
-            <option value="starter">Starter</option>
-            <option value="basic">Basic</option>
-            <option value="premium">Premium</option>
-            <option value="anchor">Anchor</option>
-            <option value="enterprise">Enterprise</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="shipCost">Your Shipping Cost ($)</label>
+            <input id="shipCost" type="number" min="0" step="0.01" value="16.86" />
+          </div>
 
-        <div class="field">
-          <label for="sellerLevel">Seller Level</label>
-          <select id="sellerLevel">
-            <option value="topRated" selected>Top Rated</option>
-            <option value="aboveStandard">Above Standard</option>
-            <option value="belowStandard">Below Standard</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="storeLevel">eBay Store Subscription</label>
+            <select id="storeLevel">
+              <option value="none">No Store</option>
+              <option value="starter">Starter</option>
+              <option value="basic">Basic</option>
+              <option value="premium">Premium</option>
+              <option value="anchor" selected>Anchor</option>
+              <option value="enterprise">Enterprise</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="overseasSale">Overseas / International Sale?</label>
-          <select id="overseasSale">
-            <option value="no" selected>No</option>
-            <option value="yes">Yes</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="sellerLevel">Seller Level</label>
+            <select id="sellerLevel">
+              <option value="topRated">Top Rated</option>
+              <option value="aboveStandard" selected>Above Standard</option>
+              <option value="belowStandard">Below Standard</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="adPercent">Promoted Ad Rate (%)</label>
-          <input id="adPercent" type="number" min="0" step="0.01" value="20.00" />
-        </div>
+          <div class="field">
+            <label for="overseasSale">Overseas / International Sale?</label>
+            <select id="overseasSale">
+              <option value="no" selected>No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="taxMode">Sales Tax Mode</label>
-          <select id="taxMode">
-            <option value="percent" selected>% Percentage</option>
-            <option value="amount">Fixed Amount</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="adPercent">Promoted Ad Rate (%)</label>
+            <input id="adPercent" type="number" min="0" step="0.01" value="0.00" />
+          </div>
 
-        <div class="field">
-          <label for="taxValue">Sales Tax (% or $)</label>
-          <input id="taxValue" type="number" min="0" step="0.01" value="7.00" />
-        </div>
+          <div class="field">
+            <label for="taxMode">Sales Tax Mode</label>
+            <select id="taxMode">
+              <option value="percent" selected>% Percentage</option>
+              <option value="amount">Fixed Amount</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="taxIncludesShipping">Sales Tax Includes Shipping?</label>
-          <select id="taxIncludesShipping">
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="taxValue">Sales Tax (% or $)</label>
+            <input id="taxValue" type="number" min="0" step="0.01" value="6.00" />
+          </div>
 
-        <div class="field">
-          <label for="category">eBay Category</label>
-          <select id="category">
-            <option value="most" selected>Most Categories</option>
-            <option value="motors">eBay Motors</option>
-            <option value="books">Books / Movies / Music</option>
-            <option value="coins">Coins & Paper Money</option>
-            <option value="bullion">Bullion</option>
-            <option value="cards">Collectible Cards</option>
-            <option value="jewelry">Jewelry & Watches</option>
-            <option value="watches">Watches, Parts & Accessories</option>
-            <option value="heavy">Heavy Equipment / Select B&I</option>
-            <option value="guitars">Guitars & Basses</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="taxIncludesShipping">Sales Tax Includes Shipping?</label>
+            <select id="taxIncludesShipping">
+              <option value="yes" selected>Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="subCategory">Subcategory</label>
-          <select id="subCategory">
-            <option value="most" selected>General</option>
-            <option value="partsAccessories">Parts & Accessories</option>
-            <option value="automotiveTools">Automotive Tools & Supplies</option>
-            <option value="safetySecurity">Safety & Security Accessories</option>
-            <option value="vehicle">Vehicle Listing</option>
-          </select>
-        </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category">
+              <option value="motors" selected>eBay Motors</option>
+              <option value="most">Most Categories</option>
+              <option value="books">Books / Movies / Music</option>
+              <option value="coins">Coins & Paper Money</option>
+              <option value="bullion">Bullion</option>
+              <option value="cards">Collectible Cards</option>
+              <option value="jewelry">Jewelry & Watches</option>
+              <option value="watches">Watches, Parts & Accessories</option>
+              <option value="heavy">Heavy Equipment / Select B&I</option>
+              <option value="guitars">Guitars & Basses</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="storeFeeAdjustment">
-            Store Fee Adjustment (%)
-          </label>
-          <input id="storeFeeAdjustment" type="number" min="-10" max="10" step="0.01" value="0.00" />
-          <small class="hint">
-            Leave at 0 unless you want to manually offset fee % for store discounts.
-          </small>
-        </div>
+          <div class="field">
+            <label for="subCategory">Subcategory</label>
+            <select id="subCategory">
+              <option value="partsAccessories" selected>Parts & Accessories</option>
+              <option value="automotiveTools">Automotive Tools & Supplies</option>
+              <option value="safetySecurity">Safety & Security Accessories</option>
+              <option value="vehicle">Vehicle Listing</option>
+              <option value="general">General</option>
+            </select>
+          </div>
 
-        <div class="field">
-          <label for="roundTo99">Round Margin Prices to .99?</label>
-          <select id="roundTo99">
-            <option value="yes" selected>Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-      </section>
+          <div class="field">
+            <label for="manualFeeAdjust">Manual Fee Adjustment (%)</label>
+            <input id="manualFeeAdjust" type="number" min="-10" max="10" step="0.01" value="0.00" />
+            <small>Optional override after store/category logic.</small>
+          </div>
 
-      <section class="actions">
-        <button id="calcBtn" type="button">Calculate</button>
+          <div class="field">
+            <label for="roundTo99">Round Margin Prices to .99?</label>
+            <select id="roundTo99">
+              <option value="yes">Yes</option>
+              <option value="no" selected>No</option>
+            </select>
+          </div>
+        </div>
       </section>
 
       <section class="results-grid">
-        <div class="result-card">
+        <section class="panel">
           <h2>Results</h2>
-          <div id="profitResult" class="result-box"></div>
-        </div>
+          <div id="resultsBox" class="result-box"></div>
+        </section>
 
-        <div class="result-card">
+        <section class="panel">
           <h2>Fee Breakdown</h2>
-          <div id="feeBreakdown" class="result-box"></div>
-        </div>
+          <div id="feeBox" class="result-box"></div>
+        </section>
       </section>
 
-      <section class="table-card">
+      <section class="panel">
         <h2>Suggested Price by Target Margin</h2>
         <div class="table-wrap">
           <table id="resultTable">
@@ -180,9 +181,9 @@
         </div>
       </section>
 
-      <section class="note-card">
-        <h2>Important Note About Store Levels</h2>
-        <p id="storeNote"></p>
+      <section class="panel">
+        <h2>Effective Fee Logic Used</h2>
+        <div id="logicBox" class="result-box compact"></div>
       </section>
     </main>
   </div>
