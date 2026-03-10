@@ -1,0 +1,67 @@
+body
+{
+font-family: Arial;
+background:#f4f4f4;
+padding:30px;
+}
+
+h1
+{
+text-align:center;
+}
+
+.container
+{
+background:white;
+padding:25px;
+border-radius:10px;
+max-width:900px;
+margin:auto;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.input-grid
+{
+display:grid;
+grid-template-columns: 1fr 1fr;
+gap:10px;
+margin-bottom:20px;
+}
+
+label
+{
+font-weight:bold;
+}
+
+input, select
+{
+padding:6px;
+font-size:14px;
+}
+
+button
+{
+padding:10px 20px;
+font-size:16px;
+cursor:pointer;
+margin-bottom:20px;
+}
+
+table
+{
+width:100%;
+border-collapse:collapse;
+}
+
+th, td
+{
+border:1px solid #ccc;
+padding:8px;
+text-align:center;
+}
+
+th
+{
+background:#333;
+color:white;
+}
