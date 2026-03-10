@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marketplace Profit Calculator</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<h1>Marketplace Profit Calculator</h1>
+
+<div class="container">
+
+<div class="input-grid">
+
+<label>Marketplace</label>
+<select id="marketplace">
+<option value="ebay">eBay</option>
+<option value="amazon">Amazon</option>
+</select>
+
+<label>Item Cost ($)</label>
+<input id="itemCost" type="number" value="100">
+
+<label>Your Shipping Cost ($)</label>
+<input id="shipCost" type="number" value="10">
+
+<label>Buyer Paid Shipping ($)</label>
+<input id="buyerShip" type="number" value="0">
+
+<label>Fee %</label>
+<input id="feePercent" type="number" value="13">
+
+<label>Advertising %</label>
+<input id="adPercent" type="number" value="0">
+
+<label>Sales Tax %</label>
+<input id="taxPercent" type="number" value="7">
+
+<label>Fees Charged on Tax?</label>
+<select id="feeOnTax">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+
+</div>
+
+<button onclick="calculate()">Calculate</button>
+
+<h2>Suggested Prices by Margin</h2>
+
+<table id="resultTable">
+<thead>
+<tr>
+<th>Margin %</th>
+<th>Suggested Price</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
